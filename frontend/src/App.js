@@ -9,7 +9,7 @@ import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 import withRoot from './modules/withRoot';
 
-function Index() {
+function App() {
   return (
     <React.Fragment>
       <AppAppBar />
@@ -24,4 +24,4 @@ function Index() {
   );
 }
 
-export default withRoot(Index);
+export default withRoot(App);
