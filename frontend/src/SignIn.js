@@ -13,6 +13,7 @@ import FormFeedback from './modules/form/FormFeedback';
 import withRoot from './modules/withRoot';
 
 function SignIn() {
+  console.log('hi')
   const [sent, setSent] = React.useState(false);
 
   const validate = (values) => {
@@ -43,7 +44,7 @@ function SignIn() {
           <Typography variant="body2" align="center">
             {'Not a member yet? '}
             <Link
-              href="/premium-themes/onepirate/sign-up/"
+              href="/signup"
               align="center"
               underline="always"
             >

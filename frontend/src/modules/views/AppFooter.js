@@ -10,8 +10,8 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="/">
+        Churn Prediction
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -42,7 +42,7 @@ const LANGUAGES = [
   },
 ];
 
-export default function AppFooter() {
+export default function   AppFooter() {
   return (
     <Typography
       component="footer"

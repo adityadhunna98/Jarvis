@@ -108,7 +108,7 @@ function ProductHowItWorks() {
           size="large"
           variant="contained"
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          href="/signup"
           sx={{ mt: 8 }}
         >
           Get started
