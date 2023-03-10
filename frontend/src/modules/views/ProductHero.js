@@ -10,7 +10,7 @@ export default function ProductHero() {
   return (
     <ProductHeroLayout
       sxBackground={{
-        backgroundImage: `url(${backgroundImage})`,
+        // backgroundImage: `url(${backgroundImage})`,
         backgroundColor: '#7fc7d9', // Average color of the background image.
         backgroundPosition: 'center',
       }}
@@ -18,11 +18,11 @@ export default function ProductHero() {
       {/* Increase the network loading priority of the background image. */}
       <img
         style={{ display: 'none' }}
-        src={backgroundImage}
+        src={''}
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        Check Churning Customers
       </Typography>
       <Typography
         color="inherit"

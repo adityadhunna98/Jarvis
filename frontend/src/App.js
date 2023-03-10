@@ -11,6 +11,7 @@ import AppAppBar from "./modules/views/AppAppBar";
 import withRoot from "./modules/withRoot";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
+import LandingPage from "./LandingPage";
 
 function App() {
   return (
@@ -18,16 +19,10 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" component={Homepage} exact /> */}
-            {/* <Route path="/chats" component={Chatpage} /> */}
-            {/* <Route path="/dashboard" component={Dashboard} /> */}
-            {/* <Route path="/notification" component={Notification} /> */}
-            {/* <Route path='/underConstruction' component={Working} /> */}
             <Route path="/" element={<SignIn />} exact />
-            {/* <Chatpage /> */}
             <Route path="/signup" element={<SignUp />} />
             <Route
-              path="/landpage"
+              path="/landpage" element={<LandingPage />}
               // elememt={
                   // <>
                   // <AppAppBar />
