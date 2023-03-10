@@ -1,23 +1,24 @@
-import * as React from 'react';
-import { Field, Form, FormSpy } from 'react-final-form';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Typography from './modules/components/Typography';
-import AppFooter from './modules/views/AppFooter';
-import AppAppBar from './modules/views/AppAppBar';
-import AppForm from './modules/views/AppForm';
-import { email, required } from './modules/form/validation';
-import RFTextField from './modules/form/RFTextField';
-import FormButton from './modules/form/FormButton';
-import FormFeedback from './modules/form/FormFeedback';
-import withRoot from './modules/withRoot';
-
+import * as React from "react";
+import { Field, Form, FormSpy } from "react-final-form";
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import Typography from "./modules/components/Typography";
+import AppFooter from "./modules/views/AppFooter";
+import AppAppBar from "./modules/views/AppAppBar";
+import AppForm from "./modules/views/AppForm";
+import { email, required } from "./modules/form/validation";
+import RFTextField from "./modules/form/RFTextField";
+import FormButton from "./modules/form/FormButton";
+import FormFeedback from "./modules/form/FormFeedback";
+import withRoot from "./modules/withRoot";
+import axios from "axios";
+const API = "http://127.0.0.1:5000/result";
 function SignIn() {
-  console.log('hi')
+  // console.log('hi')
   const [sent, setSent] = React.useState(false);
 
   const validate = (values) => {
-    const errors = required(['email', 'password'], values);
+    const errors = required(["email", "password"], values);
 
     if (!errors.email) {
       const emailError = email(values.email);
@@ -29,8 +30,39 @@ function SignIn() {
     return errors;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
     setSent(true);
+    // const url = "http://127.0.0.1:5000/signIn";
+    // axios({
+    //   method: "post",
+    //   url: API,
+    //   data: "hello",
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //     "Access-Control-Allow-Origin": "*",
+    //     'Accept': "application/json",
+    //   },
+    // })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    // axios
+    //   .get("http://127.0.0.1:5000/signIn", {
+    //     headers: {
+    //       Accept: "application/json, text/plain, */*",
+    //       "Content-Type": null,
+    //     },
+    //   })
+    //   .then((resp) => {
+    //     console.log("resp", resp);
+    //     if (resp.data === "signIn") {
+    //       setSent(false);
+    window.location.href = "/landpage";
+    //     }
+    //   });
   };
 
   return (
@@ -42,12 +74,8 @@ function SignIn() {
             Sign In
           </Typography>
           <Typography variant="body2" align="center">
-            {'Not a member yet? '}
-            <Link
-              href="/signup"
-              align="center"
-              underline="always"
-            >
+            {"Not a member yet? "}
+            <Link href="/signup" align="center" underline="always">
               Sign Up here
             </Link>
           </Typography>
@@ -58,7 +86,12 @@ function SignIn() {
           validate={validate}
         >
           {({ handleSubmit: handleSubmit2, submitting }) => (
-            <Box component="form" onSubmit={handleSubmit2} noValidate sx={{ mt: 6 }}>
+            <Box
+              component="form"
+              onSubmit={handleSubmit2}
+              noValidate
+              sx={{ mt: 6 }}
+            >
               <Field
                 autoComplete="email"
                 autoFocus
@@ -99,13 +132,16 @@ function SignIn() {
                 color="secondary"
                 fullWidth
               >
-                {submitting || sent ? 'In progress…' : 'Sign In'}
+                {submitting || sent ? "In progress…" : "Sign In"}
               </FormButton>
             </Box>
           )}
         </Form>
         <Typography align="center">
-          <Link underline="always" href="/premium-themes/onepirate/forgot-password/">
+          <Link
+            underline="always"
+            href="/premium-themes/onepirate/forgot-password/"
+          >
             Forgot password?
           </Link>
         </Typography>

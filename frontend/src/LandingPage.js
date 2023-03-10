@@ -5,6 +5,7 @@ import Link from "@mui/material/Link";
 import Typography from "./modules/components/Typography";
 import AppFooter from "./modules/views/AppFooter";
 import AppAppBar from "./modules/views/AppAppBar";
+import ResponsiveAppBar from './modules/views/MainAppAppBar'
 import ProductCategories from "./modules/views/ProductCategories";
 import ProductSmokingHero from "./modules/views/ProductSmokingHero";
 import ProductHero from "./modules/views/ProductHero";
@@ -18,13 +19,14 @@ function LandingPage() {
   return (
     // <React.Fragment>
     <div>
-      <AppAppBar />
+      {/* <AppAppBar /> */}
+      <ResponsiveAppBar />
       <ProductHero />
-      <ProductValues />
+      {/* <ProductValues /> */}
       <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
-      <ProductSmokingHero />
+      {/* <ProductHowItWorks /> */}
+      {/* <ProductCTA /> */}
+      {/* <ProductSmokingHero /> */}
       <AppFooter />
     </div>
   );
